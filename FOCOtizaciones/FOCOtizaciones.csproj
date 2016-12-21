@@ -63,6 +63,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\AppClass.cs" />
+    <Compile Include="ViewModel\Commands\ParameterCommand.cs" />
+    <Compile Include="ViewModel\Commands\SimpleCommand.cs" />
+    <Compile Include="ViewModel\Converters\BackgroundConverter.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="WindowsTest.xaml.cs">
       <DependentUpon>WindowsTest.xaml</DependentUpon>
     </Compile>
@@ -81,7 +86,7 @@
     <Compile Include="Views\AppCodeControl.xaml.cs">
       <DependentUpon>AppCodeControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Costo.cs" />
+    <Compile Include="Model\Costo.cs" />
     <Compile Include="Interfaz.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -120,6 +125,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

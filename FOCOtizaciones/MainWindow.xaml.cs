@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FOCOtizaciones.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,7 +32,8 @@ namespace FOCOtizaciones
                 Id = 101,
                 Nombre = "Aplicacion",
                 Precio = 123,
-                Checked = false,
+                //Enable = false,
+                Enable = "true"
             });
             return authors;
         }

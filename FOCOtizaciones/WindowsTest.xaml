@@ -4,11 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FOCOtizaciones"
+        xmlns:vm="clr-namespace:FOCOtizaciones.ViewModel"
         xmlns:appControl="clr-namespace:FOCOtizaciones"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
+        xmlns:converter="clr-namespace:FOCOtizaciones.ViewModel.Converters"
         Title="Ventana Principal" Height="497.368" Width="525" >
-    <Grid Margin="2,0,-2,0">
+    <Window.Resources>
+        <vm:ViewModelBase x:Key="viewModel" />
+        <converter:BackgroundConverter x:Key="converter" />
+    </Window.Resources>
+    <Grid Background="{Binding Enable, Converter={StaticResource converter}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="27*"/>
             <RowDefinition Height="389*"/>
@@ -20,9 +26,22 @@
             <ColumnDefinition Width="35*"/>
             <ColumnDefinition Width="16*"/>
         </Grid.ColumnDefinitions>
-        <appControl:AppCodeControl Grid.Row="1" Grid.Column="1" Margin="0,0,0,351">
-        </appControl:AppCodeControl>
-        
+        <ListView x:Name="listView" Grid.Column="1" Grid.Row="1" DataContext="{Binding Source={StaticResource viewModel}}"
+                 ItemsSource="{Binding}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Background="{Binding Enable, Converter={StaticResource converter}}"
+                              Width="350"
+                              Height="20">
+                        <TextBlock Text="{Binding Nombre}" VerticalAlignment="Center" Margin="30,0,0,0" />
+                        <TextBlock Text="{Binding Id}" VerticalAlignment="Center" Margin="5 0 0 0" />
+                        <TextBlock Text="{Binding Precio}" VerticalAlignment="Center" Margin="80 0 0 0" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
 
     </Grid>
 </Controls:MetroWindow>
