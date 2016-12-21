@@ -5,18 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FOCOtizaciones"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="71,64,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="176" Width="335">
-            <DataGrid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.18"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </DataGrid.RenderTransform>
-        </DataGrid>
+        Title="Ventana Principal" Height="497.368" Width="525" Initialized="Window_Initialized" Loaded="Window_Loaded">
+    <Grid Margin="0,0,-8,-20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="266*"/>
+            <ColumnDefinition Width="243*"/>
+            <ColumnDefinition Width="16*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dataGridDatos" HorizontalAlignment="Left" Margin="63,26,0,0" VerticalAlignment="Top" Height="390" Width="413" Grid.ColumnSpan="2" CanUserAddRows="False"/>
 
     </Grid>
 </Window>
