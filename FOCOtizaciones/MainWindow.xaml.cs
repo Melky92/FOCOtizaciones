@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace FOCOtizaciones
 {
     /// <summary>
@@ -37,6 +38,9 @@ namespace FOCOtizaciones
         public MainWindow()
         {
             InitializeComponent();
+            WindowsTest test = new WindowsTest();
+            test.Show();
+
         }
 
         private void Window_Initialized(object sender, EventArgs e)

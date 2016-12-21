@@ -50,7 +50,7 @@ namespace FOCOtizaciones
             {
                 // May be virtualized, bring into view and try again.
                 grid.UpdateLayout();
-                grid.ScrollIntoView(grid.Items[index]);
+                //grid.ScrollIntoView(grid.Items[index]);
                 col = (DataGridColumn)grid.ItemContainerGenerator.ContainerFromIndex(index);
             }
             return col;
